@@ -49,6 +49,7 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
+            export AZURE_AUTH_LOCATION=/home/circleci/repo/my.azureauth
             pytest -v /home/circleci/repo/tests/test_azurecli.py --junitxml=/home/circleci/repo/test-reports/azure/reports.xml
 
       - store_test_results:
